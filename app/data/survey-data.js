@@ -30,15 +30,15 @@
 	  {"id":10,
 	  "question": "You feel more energetic after spending time with a group of people." ,
 	  "answer": ""}       
-	],
+	]//,
 
-	"options": [
-	  {"value1": "1 (Strongly Disagree)",
-	  "value2": "2" ,
-	  "value3": "3" ,
-	  "value4": "4" ,
-	  "value5": "5 (Strongly Agree)"}
-	]
+	// "options": [
+	//   {"value1": "1 (Strongly Disagree)",
+	//   "value2": "2" ,
+	//   "value3": "3" ,
+	//   "value4": "4" ,
+	//   "value5": "5 (Strongly Agree)"}
+	// ]
 };
 
 $( document ).ready(function() {

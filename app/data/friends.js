@@ -34,11 +34,6 @@ var friendsobj = [
 		"name":"padma",
 		"photo":"https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
 		"scores":["3","2","2","4","2","1","2","1","1","3"]
-	},
-	{
-		"name":"padma",
-		"photo":"https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
-		"scores":["3","2","2","4","2","1","2","1","1","3"]
 	}
 ];
 // Note how we export the array. This makes it accessible to other files using require. 
