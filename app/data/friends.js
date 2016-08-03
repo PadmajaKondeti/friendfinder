@@ -1,66 +1,45 @@
 //questions and options json
-	var questionObj = {"questions": [
-	  {"id":1,
-	  "question": "Your mind is always buzzing with unexplored ideas and plans." ,
-	  "answer": ""},
-	  {"id":2,
-	  "question": "Generally speaking, you rely more on your experience than your imagination." ,
-	  "answer": ""},
-	  {"id":3,
-	  "question": "You find it easy to stay relaxed and focused even when there is some pressure." ,
-	  "answer": ""},
-	  {"id":4,
-	  "question": "You rarely do something just out of sheer curiosity." ,
-	  "answer": ""},
-	  {"id":5,
-	  "question": "People can rarely upset you." ,
-	  "answer": ""},
-	  {"id":6,
-	  "question": "It is often difficult for you to relate to other people’s feelings." ,
-	  "answer": ""},
-	  {"id":7,
-	  "question": "In a discussion, truth should be more important than people’s sensitivities." ,
-	  "answer": ""},
-	  {"id":8,
-	  "question": "You think that everyone’s views should be respected regardless of whether they are supported by facts or not." ,
-	  "answer": ""},
-	  {"id":9,
-	  "question": "You feel more energetic after spending time with a group of people." ,
-	  "answer": ""},  
-	  {"id":10,
-	  "question": "You feel more energetic after spending time with a group of people." ,
-	  "answer": ""}       
-	],
-
-	"options": [
-	  {"value1": "1 (Strongly Disagree)",
-	  "value2": "2" ,
-	  "value3": "3" ,
-	  "value4": "4" ,
-	  "value5": "5 (Strongly Agree)"}
-	]
-};
-
-$( document ).ready(function() {
-    console.log( "document loaded" );
-    var selectionHTML1 = '<select class="chosen-select"  name="question" id="q">'
-    var selectionHTML2 = +'>';   
-    var optionsHTML = '<option value=""></option>' +
-           '<option value="1">1 (Strongly Disagree)</option>' +
-           '<option value="2">2</option>' +
-           '<option value="3">3</option>'+
-           '<option value="4">4</option>' +
-           '<option value="5">5 (Strongly Agree)</option>';
-    var questionsHTML ="";
-	var endHTML1 = '</select>'
-	//iterate over the data and append a select option
-	 $.each(questionObj.questions, function(key, val){
-	 	questionsHTML += "<h3><strong>Question"+val.id + "</strong></h3>";
-	 	questionsHTML += "<h4>"+ val.question + "</h4>";
-	 	questionsHTML += selectionHTML1 + val.id + selectionHTML2;
-	 	questionsHTML += optionsHTML;
-	 	questionsHTML += endHTML1 
-	 });
-	 $("#questions").html(questionsHTML);
-	 $(".chosen-select").chosen();
-});
+var friendsobj = [
+	{
+		"name":"Ahmed",
+		"photo":"https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+		"scores":["5","1","4","4","5","1","2","5","4","1"]
+	},
+	{
+		"name":"Jacob Deming",
+		"photo":"https://pbs.twimg.com/profile_images/691785039043022849/oWsy8LNR.jpg",
+		"scores":["4","2","5","1","3","2","2","1","3","2"]
+	},
+	{
+		"name":"Jeremiah Scanlon",
+		"photo":"https://avatars2.githubusercontent.com/u/8504998?v=3&s=460",
+		"scores":["5","2","2","2","4","1","3","2","5","5"]
+	},
+	{
+		"name":"Louis T. Delia",
+		"photo":"https://pbs.twimg.com/profile_images/639214960049000449/lNCRC-ub.jpg",
+		"scores":["3","3","4","2","2","1","3","2","2","3"]
+	},
+	{
+		"name":"Lou Ritter",
+		"photo":"https://m.facebook.com/photo.php?fbid=10208500699025296&id=1542229019&set=a.1549418665704.77596.1542229019&source=11",
+		"scores":["4","3","4","1","5","2","5","3","1","4"]
+	},
+	{
+		"name":"Jordan Biason",
+		"photo":"https://scontent-ord1-1.xx.fbcdn.net/v/t1.0-9/12741971_10205764267089153_4212986785721953092_n.jpg?oh=4e18265f7d380167223a97fbd7eba278&oe=57B78445",
+		"scores":["4","4","2","3","2","2","3","2","4","5"]
+	},
+	{
+		"name":"padma",
+		"photo":"https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+		"scores":["3","2","2","4","2","1","2","1","1","3"]
+	},
+	{
+		"name":"padma",
+		"photo":"https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+		"scores":["3","2","2","4","2","1","2","1","1","3"]
+	}
+];
+// Note how we export the array. This makes it accessible to other files using require. 
+module.exports = friendsobj;
