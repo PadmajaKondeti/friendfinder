@@ -23,6 +23,7 @@
 		<hr>
 
 		<h3><strong>About You</strong></h3>
+
 		<h4>Name (Required)</h4>
 		<input type="text" name="" id="name" class="form-control" required="">
 
@@ -104,6 +105,58 @@
 	]
 };
 
+
+	 $("#submit").on("click", function(){
+	 	var validateForm = function(){
+	 		var isValid = true;
+	 		$('.form-control').each(function () {
+	 			// body...
+	 			if ($(this).val() === '')
+	 				isValid = false;
+	 		});
+	 		$('.chosen-select').each(function () {
+	 			// body...
+	 			if ($(this).val() === '')
+	 				isValid = false;
+	 		});
+	 		return isValid;
+	 	};
+	 	var currentURL = window.location.origin;
+	 	if (validateForm() == true){
+		 	// Here we grab the form elements
+			var newUser = {
+				name: $('#name').val().trim(),
+				photo: $('#photo').val().trim(),
+				score: [
+					$('#q1').val(),
+					$('#q2').val(),
+					$('#q3').val(),
+					$('#q4').val(),
+					$('#q5').val(),
+					$('#q6').val(),
+					$('#q7').val(),
+					$('#q8').val(),
+					$('#q9').val(),
+					$('#q10').val()
+				]
+			};
+			console.log(currentURL + newUser);
+			// $.post(currentURL + "/api/friends", newUser,
+		 //    function(data){
+		 //    	// If a table is available... tell user they are booked.
+		 //    	if(data == true){
+		 //    		alert("Yay! You are officially booked!")
+		 //    	}
+		 //    	// If a table is available... tell user they on the waiting list.
+		 //    	if(data == false){
+		 //    		alert("Sorry you are on the wait list")
+		 //    	}
+		 //    });
+	} else {
+		alert('please fill out all fields before submit');
+	};
+	return false;
+});
 $( document ).ready(function() {
     console.log( "document loaded" );
     var selectionHTML1 = '<select class="chosen-select"  name="question" id="q">'
@@ -122,45 +175,10 @@ $( document ).ready(function() {
 	 	questionsHTML += "<h4>"+ val.question + "</h4>";
 	 	questionsHTML += selectionHTML1 + val.id + selectionHTML2;
 	 	questionsHTML += optionsHTML;
-	 	questionsHTML += endHTML1 
+	 	questionsHTML += endHTML1; 
 	 });
 	 $("#questions").html(questionsHTML);
 	 $(".chosen-select").chosen();
-	 $("#submit").on("click", function(){
-	 	var currentURL = window.location.origin;
-	 	// Here we grab the form elements
-		var newUser = {
-			name: $('#name').val().trim(),
-			photo: $('#photo').val().trim(),
-			q1: $('#q1').val(),
-			q2: $('#q2').val(),
-			q3: $('#q3').val(),
-			q4: $('#q4').val(),
-			q5: $('#q5').val(),
-			q6: $('#q6').val(),
-			q7: $('#q7').val(),
-			q8: $('#q8').val(),
-			q9: $('#q9').val(),
-			q10: $('#q10').val()
-		};
-		console.log(currentURL +newUser);
-		$.post(currentURL + "/api/friends", newUser,
-	    function(data){
-
-	    	// If a table is available... tell user they are booked.
-	    	if(data == true){
-	    		alert("Yay! You are officially booked!")
-	    	}
-
-	    	// If a table is available... tell user they on the waiting list.
-	    	if(data == false){
-	    		alert("Sorry you are on the wait list")
-	    	}
-
-	    	
-
-	    });
-	 });
 });
 
 </script>
